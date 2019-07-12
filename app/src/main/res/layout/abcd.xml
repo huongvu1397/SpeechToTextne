@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:aapt="http://schemas.android.com/aapt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="56dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/file_name"
+                    android:padding="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:drawablePadding="10dp"
+                    android:onClick="rename"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"/>
+
+            <EditText
+                    android:textSize="18sp"
+                    android:textColorLink="@android:color/holo_green_dark"
+                    android:gravity="top"
+                    android:id="@+id/txt"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="80dp"
+                    android:singleLine="false"
+                    android:inputType="textMultiLine"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:id="@+id/bar_extra"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="40dp">
+
+            <TextView
+                    android:textSize="18sp"
+                    android:gravity="right|center_vertical|center_horizontal|center"
+                    android:id="@+id/word_counter"
+                    android:paddingRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:id="@+id/bar_bottom"
+                android:background="?attr/colorButtonNormal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+            <ImageButton
+                    android:id="@+id/bt_keyboard"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:tint="@android:color/darker_gray"
+                    android:layout_weight="1"
+                    android:onClick="show_keyboard"
+                    app:srcCompat="@drawable/ic_keyboard_black_24dp"/>
+
+            <ImageButton
+                    android:id="@+id/bt_copy"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:tint="@android:color/darker_gray"
+                    android:layout_weight="1"
+                    android:onClick="copy_to_clipboard"
+                    app:srcCompat="@drawable/baseline_file_copy_black_24"/>
+
+            <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            <ImageButton
+                    android:id="@+id/bt_undo"
+                    android:background="@android:color/transparent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:tint="@android:color/darker_gray"
+                    android:layout_weight="2"
+                    android:onClick="action_undo"
+                    app:srcCompat="@drawable/ic_undo_black_24dp"/>
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+                android:id="@+id/speak"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_mic_white_24dp"
+                app:backgroundTint="#f0f"
+
+                app:layout_anchor="@+id/bar_bottom"
+                app:layout_anchorGravity="center"
+                app:rippleColor="#ffffffff"/>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <LinearLayout
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+    </LinearLayout>
+</RelativeLayout>
